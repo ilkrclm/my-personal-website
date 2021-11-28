@@ -28,8 +28,9 @@ const Home = () => {
           
         </ImgWrapper>
         <H1 className="font-semibold text-2xl mt-2">İlker Çalım</H1>
-        <H2 className="opacity-50 mt-1 font-medium">Web Tasarım Uzmanı</H2>
-        <Wrapper direction="col" className="mt-12 sm:mt-20 max-w-max h-full">
+        <H2 className="opacity-50 mt-1 font-medium">Sayfam Yapım Aşamasındadır... </H2>
+      
+        {/* <Wrapper direction="col" className="mt-12 sm:mt-20 max-w-max h-full">
           <ButtonLink href="/about">
             <Icon icon={"user"} className="h-6 w-6" />
             <Text as="span" text="Hakkımda" />
@@ -51,7 +52,7 @@ const Home = () => {
           <IconLink icon={"twitter"} />
           <IconLink icon={"instagram"} />
           <IconLink icon={"dribbble"} />
-        </Wrapper>
+        </Wrapper> */}
     </MainLayout>
   )
 }
