@@ -1,82 +1,59 @@
-import Head from 'next/head'
+import MainLayout from '@/components/MainLayout'
+import ButtonLink from '@/components/elements/ButtonLink'
+import Icon from '@/components/elements/Icon'
+import IconLink from '@/components/elements/IconLink'
+import FlexBox from '@/components/ui/FlexBox'
+import Img from '@/components/elements/Img'
+import ImgWrapper from '@/components/ui/ImgWrapper'
+import Text from '@/components/elements/Text'
+import Wrapper from '@/components/ui/Wrapper'
+import Btn from '@/components/elements/Btn'
+import { useTheme } from 'next-themes'
+import withTransition from '@/utils/withTransition'
+import H1 from '@/components/elements/H1'
+import H2 from '@/components/elements/P'
 
-export default function Home() {
+const Home = () => {
+  const {theme, setTheme} = useTheme()
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
-        <h1 className="text-6xl font-bold">
-          Welcome to{' '}
-          <a className="text-blue-600" href="https://nextjs.org">
-            Next.js!
-          </a>
-        </h1>
-
-        <p className="mt-3 text-2xl">
-          Get started by editing{' '}
-          <code className="p-3 font-mono text-lg bg-gray-100 rounded-md">
-            pages/index.js
-          </code>
-        </p>
-
-        <div className="flex flex-wrap items-center justify-around max-w-4xl mt-6 sm:w-full">
-          <a
-            href="https://nextjs.org/docs"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Documentation &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Find in-depth information about Next.js features and API.
-            </p>
-          </a>
-
-          <a
-            href="https://nextjs.org/learn"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Learn &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Learn about Next.js in an interactive course with quizzes!
-            </p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Examples &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Discover and deploy boilerplate example Next.js projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Deploy &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className="flex items-center justify-center w-full h-24 border-t">
-        <a
-          className="flex items-center justify-center"
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className="h-4 ml-2" />
-        </a>
-      </footer>
-    </div>
+    <MainLayout image={theme === 'dark' ? "/images/home-bg-dark.png" : "/images/home-bg.png"}>
+        {/* <Btn className="absolute right-5 top-5">
+           <Icon icon={"menu"} className="h-6 w-6" h={12} w={12} />
+        </Btn>
+        <Btn className="absolute left-8 top-8 text-lg font-medium ">
+           TR
+        </Btn> */}
+        <ImgWrapper bg={theme === 'dark' ? " bg-gray-900" : " bg-white"}>
+          {theme === 'dark' ? <Icon icon="logoDark" className=" h-16 w-16" /> : <Icon icon="logo" className="h-16 w-16" />}
+          
+        </ImgWrapper>
+        <H1 className="font-semibold text-2xl mt-2">İlker Çalım</H1>
+        <H2 className="opacity-50 mt-1 font-medium">Web Tasarım Uzmanı</H2>
+        <Wrapper direction="col" className="mt-12 sm:mt-20 max-w-max h-full">
+          <ButtonLink href="/about">
+            <Icon icon={"user"} className="h-6 w-6" />
+            <Text as="span" text="Hakkımda" />
+          </ButtonLink>
+          <ButtonLink href="/portfolio">
+            <Icon icon={"work"} className="h-6 w-6" />
+            <Text as="span" text="Portfolyo" />
+          </ButtonLink>
+          <ButtonLink href="/contact">
+            <Icon icon={"phone"} className="h-6 w-6" />
+            <Text as="span" text="İletişim" />
+          </ButtonLink>
+          <ButtonLink href="/about" mt={'auto sm:mt-32'} pl={3} pr={1}>
+            <Text as="span" text="Mesaj Gönder" />
+            <Icon icon={"send"} className="h-6 w-6" />
+          </ButtonLink>
+        </Wrapper>
+        <Wrapper direction="row" className="space-x-3 items-center justify-center my-5">
+          <IconLink icon={"twitter"} />
+          <IconLink icon={"instagram"} />
+          <IconLink icon={"dribbble"} />
+        </Wrapper>
+    </MainLayout>
   )
 }
+
+export default withTransition(Home)

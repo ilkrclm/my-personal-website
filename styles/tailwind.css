@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    .animation-delay-2000 {
+        animation-delay: 2s;
+    }
+    .animation-delay-4000 {
+        animation-delay: 4s;
+    }
+}
+/* @layer base {
+    body {
+        @apply scrollbar-thin scrollbar-thumb-brand hover:scrollbar-thumb-brand-600 scrollbar-track-brand-500;
+    }
+} */
+
+@layer components {
+    #__next {
+        @apply w-full font-sans bg-blue-700 mx-auto min-h-screen flex flex-col items-center overflow-x-hidden;
+    }
+
+}
+
+.slide-in {
+    @apply w-full fixed left-0 top-0 h-screen origin-left bg-blue-700;
+  }
+
+  .slide-out {
+    @apply w-full fixed left-0 top-0 h-screen origin-right bg-blue-700;
+  }
