@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 
 
-export default function ImgWrapper({ children, rounded = "full", bg = "white", bgOpacity = 20, h = 24, w = 24, mt = 12 }) {
+export default function ImgWrapper({ children, rounded="full", bg="white", bgOpacity="20", h="24", w="24", mt="12" }) {
   return (
     <motion.div
       initial={{
