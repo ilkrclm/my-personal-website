@@ -1,19 +1,19 @@
 const title =
-  'Vaha Creative – Eğitimde doğru frekansı yakalayın!';
-const description = 'Eğitimde başarının frekansını keşfet. TYT, LGS, AYT sınavlarına hazırlık kursları için fırsatlarımıza hemen gözat.';
+  'İlker Çalım – Web Tasarım Uzmanı!';
+const description = '.';
 
 const SEO = {
   title,
   description,
-  canonical: 'https://vahacreative.com',
+  canonical: 'https://www.ilkercalim.com',
   openGraph: {
     type: 'website',
-    url: 'https://vahacreative.com',
+    url: 'https://ilkercalim.com',
     title,
     description,
     images: [
       {
-        url: 'https://vahacreative.com/images/og-image.png',
+        url: 'https://www.ilkercalim.com/images/og-image.png',
         alt: title,
         width: 1280,
         height: 720
