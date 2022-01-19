@@ -9,6 +9,8 @@
     .animation-delay-4000 {
         animation-delay: 4s;
     }
+
+    
 }
 /* @layer base {
     body {
@@ -24,9 +26,27 @@
 }
 
 .slide-in {
-    @apply w-full fixed left-0 top-0 h-screen origin-left bg-blue-700;
+    @apply w-full fixed left-0 top-0 h-screen origin-left bg-white;
   }
 
   .slide-out {
-    @apply w-full fixed left-0 top-0 h-screen origin-right bg-blue-700;
+    @apply w-full fixed left-0 top-0 h-screen origin-right bg-white;
   }
+
+#projects-slider .swiper-slide:not(.swiper-slide-active) {
+    opacity: 0 !important;
+}
+#projects-slider .swiper-slide.swiper-slide-active {
+    @apply animate-blur;
+}
+#portfolio-slider1 .swiper-wrapper,
+#portfolio-slider2 .swiper-wrapper {
+    transition-timing-function: linear !important;
+}
+
+.Toastify__toast-theme--light {
+    @apply bg-white/20 dark:bg-gray-900/20 text-gray-900 dark:text-white backdrop-blur-md;
+    }
+    .Toastify__close-button--light {
+        @apply text-gray-900 dark:text-white
+    }

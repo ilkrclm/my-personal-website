@@ -1,21 +1,18 @@
 import { motion } from "framer-motion";
 
-
-export default function ImgWrapper({ children, ...props }) {
+export default function AnimatedTitle({delay=0, children, ...props}) {
   return (
-    <motion.div
-      initial={{
-        y: -100,
+    <motion.div {...props} initial={{
+        y: -10,
         opacity: 0,
-        scale: 0.5,
+        scale: 0.1,
       }}
       animate={{
         y: 0,
         opacity: 1,
         scale: 1
       }}
-      transition={{ delay: 0.7 }}
-    {...props}>
+      transition={{delay: delay}}>
       {children}
     </motion.div>
   )
