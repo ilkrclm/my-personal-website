@@ -41,7 +41,7 @@ const AboutPage = () => {
 
   const {theme, setTheme} = useTheme()
   return (
-    <MainLayout image={theme === 'dark' ? "/images/home-bg-dark.png" : "/images/home-bg.png"} path={activeLocale === 'en' ? '/en/hakkimda' : '/hakkimda'} baslik={t.about_title} description={t.about_description.substring(0, 150)} lang={activeLocale === 'tr' ? 'tr_TR' : 'en_US'}>
+    <MainLayout image={theme === 'dark' ? "/images/home-bg-dark.png" : "/images/home-bg.png"} path={activeLocale === 'en' ? '/en/hakkimda' : '/hakkimda'} baslik={t.about_title} description={t.about_description} lang={activeLocale === 'tr' ? 'tr_TR' : 'en_US'}>
       
       <motion.div variants={list} className="flex flex-col md:flex-row md:space-x-16 m-auto pb-8 lg:p-8 w-full ">
 
