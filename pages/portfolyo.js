@@ -31,7 +31,7 @@ const PortfolioPage = () => {
   const [secondSwiper, setSecondSwiper] = useState(null);
 
   return (
-    <MainLayout image={theme === 'dark' ? "/images/home-bg-dark.png" : "/images/home-bg.png"} path={activeLocale === 'en' ? '/en/portfolyo' : '/portfolyo'} baslik={t.portfolio_title} description={t.portfolio_description.substring(0, 150)}>
+    <MainLayout image={theme === 'dark' ? "/images/home-bg-dark.png" : "/images/home-bg.png"} path={activeLocale === 'en' ? '/en/portfolyo' : '/portfolyo'} baslik={t.portfolio_title} description={t.portfolio_description.substring(0, 150)} lang={activeLocale === 'tr' ? 'tr_TR' : 'en_US'}>
       <div className="relative flex flex-col md:p-16 w-full h-full min-h-[inherit] overflow-y-clip">
         <h1 className="mt-8 md:mt-0 text-3xl md:text-4xl font-bold uppercase">{t.portfolio_title}</h1>
         <p className="md:text-lg mt-2 max-w-lg font-medium text-gray-700 dark:text-gray-200">{t.portfolio_description}</p> 

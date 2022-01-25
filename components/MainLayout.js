@@ -59,7 +59,7 @@ const defaultOgImage = `${process.env.NEXT_PUBLIC_URL}/images/og-image.png`
     hidden: { opacity: 0,  },
   }
 
-export default function Layout({ children, image="/images/home-bg-dark.png", path, baslik, description, ogImage=defaultOgImage }) {
+export default function Layout({ children, image="/images/home-bg-dark.png", path, baslik, lang="tr_TR", description, ogImage=defaultOgImage }) {
   
 
   const url = path === "/" ? `${process.env.NEXT_PUBLIC_URL}`: `${process.env.NEXT_PUBLIC_URL}${path}`;
@@ -111,6 +111,7 @@ export default function Layout({ children, image="/images/home-bg-dark.png", pat
         openGraph={{
           url,
           title,
+          locale: lang,
           description,
           images: [
             {
