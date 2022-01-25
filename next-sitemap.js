@@ -1,20 +1,13 @@
-const siteUrl = "https://www.vahacreative.com";
+const siteUrl = process.env.NEXT_PUBLIC_URL;
 
 module.exports = {
   siteUrl,
   exclude: ['/tr/*', '/tr'],
   alternateRefs: [
   {
-    href: "https://www.vahacreative.com/en",
+    href: `${siteUrl}/en`,
     hreflang: 'en',
   },
 ],
   generateRobotsTxt: true,
-  robotsTxtOptions: {
-    additionalSitemaps: [
-      `${siteUrl}/sitemap.xml`,
-      `${siteUrl}/sitemap-projects.xml`,
-      `${siteUrl}/sitemap-projects-en.xml`,
-    ],
-  }
 };

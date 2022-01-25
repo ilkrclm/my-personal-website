@@ -1,19 +1,20 @@
+const siteUrl = `https://${process.env.NEXT_PUBLIC_URL}`;
 const title =
   'İlker Çalım – Web Tasarım Uzmanı!';
-const description = '.';
+const description = '';
 
 const SEO = {
   title,
   description,
-  canonical: 'https://www.ilkercalim.com',
+  canonical: siteUrl,
   openGraph: {
     type: 'website',
-    url: 'https://ilkercalim.com',
+    url: siteUrl,
     title,
     description,
     images: [
       {
-        url: 'https://www.ilkercalim.com/images/og-image.png',
+        url: `${siteUrl}/images/og-image.png`,
         alt: title,
         width: 1280,
         height: 720

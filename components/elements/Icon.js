@@ -13,12 +13,14 @@ import chartBar from '@/components/icons/chartBar.svg'
 import wifi from '@/components/icons/wifi.svg'
 import battery from '@/components/icons/battery.svg'
 import email from '@/components/icons/email.svg'
+import star from '@/components/icons/star.svg'
 
 
 const ICONS = {
     chartBar,
     wifi,
     email,
+    star,
     battery,
     github,
     user: UserIcon,

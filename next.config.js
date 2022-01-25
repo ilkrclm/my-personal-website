@@ -3,12 +3,6 @@ module.exports = {
    locales: ['en', 'tr'],
    defaultLocale: 'tr',
  },
-  env: {
-    FORM_URL: process.env.FORM_URL,
-    MAILUSER: process.env.MAILUSER,
-    PASS: process.env.PASS,
-    NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL,
-  },
   images: {
     domains: ['res.cloudinary.com', 'images.pexels.com'],
   },
