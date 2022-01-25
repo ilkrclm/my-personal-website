@@ -170,7 +170,7 @@ export default function Layout({ children, image="/images/home-bg-dark.png", pat
                 </motion.aside>
               )}
             </AnimatePresence>
-            <motion.a href={activeLocale === 'tr' ? '/' : '/en'} initial={{ scale: [0], opacity: 0 }} animate={{ scale: [0.5, 1.5, 1], opacity: 1 }} transition={{ delay: 1, duration: 0.8, type: "spring", stiffness: 300 }} className="relative p-1 rounded-lg hover:bg-white/10 flex items-center justify-center flex-shrink-0 ">
+            <motion.a href={activeLocale === 'tr' ? '/' : '/en'} initial={{ scale: [0], opacity: 0 }} animate={{ scale: [0.5, 1.5, 1], opacity: 1 }} transition={{ delay: 1, duration: 0.8, type: "spring", stiffness: 300 }} className="relative p-1 rounded-lg hover:bg-white/10 flex items-center justify-center flex-shrink-0 " aria-label="Go to Home Page">
               {theme === 'dark' ? <Icon icon="logoDark" className=" h-8 w-8 filter duration-300 drop-shadow-md transition-colors" /> : <Icon icon="logo" className="h-8 w-8 filter drop-shadow-md transition-all" />}
             </motion.a>
             <nav className="hidden md:block m-auto">
