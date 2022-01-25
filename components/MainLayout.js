@@ -34,7 +34,7 @@ const sideVariants = {
   }
 };
 
-const defaultOgImage = `https://${process.env.NEXT_PUBLIC_URL}/images/og-image.png`
+const defaultOgImage = `${process.env.NEXT_PUBLIC_URL}/images/og-image.png`
 
 
 
@@ -62,7 +62,7 @@ const defaultOgImage = `https://${process.env.NEXT_PUBLIC_URL}/images/og-image.p
 export default function Layout({ children, image="/images/home-bg-dark.png", path, baslik, description, ogImage=defaultOgImage }) {
   
 
-  const url = path === "/" ? `https://${process.env.NEXT_PUBLIC_URL}`: `https://${process.env.NEXT_PUBLIC_URL}${path}`;
+  const url = path === "/" ? `${process.env.NEXT_PUBLIC_URL}`: `${process.env.NEXT_PUBLIC_URL}${path}`;
   const title = path === "/" ||  path === "/en" ? `IC | ${baslik}` : `${baslik} | IC `;
   const router = useRouter()
   const { locales, locale: activeLocale } = router

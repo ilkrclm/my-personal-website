@@ -1,4 +1,4 @@
-const siteUrl = `https://${process.env.NEXT_PUBLIC_URL}`;
+const siteUrl = `${process.env.NEXT_PUBLIC_URL}`;
 const title =
   'İlker Çalım – Web Tasarım Uzmanı!';
 const description = '';

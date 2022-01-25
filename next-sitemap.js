@@ -1,4 +1,4 @@
-const siteUrl = process.env.NEXT_PUBLIC_URL;
+const siteUrl = `${process.env.NEXT_PUBLIC_URL}`;
 
 module.exports = {
   siteUrl,
