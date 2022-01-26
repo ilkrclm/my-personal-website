@@ -13,7 +13,7 @@ import SwiperCore, { Controller, Pagination, A11y, EffectFade, EffectCreative, N
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css/effect-fade';
 import "swiper/css/effect-creative"
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import withTransition from '@/utils/withTransition'
 import Fade from '@/components/motions/Fade'
 import { motion } from 'framer-motion'
@@ -60,6 +60,10 @@ const list = {
     hidden: { opacity: 0,  },
   }
 
+
+  
+  
+
 const Home = () => {
 
   const router = useRouter()
@@ -81,8 +85,20 @@ const Home = () => {
 
   let homeTitle = `${t.home_title1.toLowerCase()} ${t.home_title2.toLowerCase()} ${t.home_title3.toLowerCase()}`
   homeTitle = homeTitle.slice(0, 1).toUpperCase() + homeTitle.slice(1)
+
+  function bgImage() {
+
+    const [mounted, setMounted] = useState(false)
+    useEffect(() => setMounted(true), [])
+
+    if (!mounted) return null
+
+    return theme === 'dark' ? "/images/home-bg-dark.png" : "/images/home-bg.png"
+  
+  }
+
   return (
-    <MainLayout image={theme === 'dark' ? "/images/home-bg-dark.png" : "/images/home-bg.png"} path={activeLocale === 'en' ? '/en' : '/'} baslik={homeTitle} description={t.home_subtitle} lang={activeLocale === 'tr' ? 'tr_TR' : 'en_US'}>
+    <MainLayout image={bgImage()} path={activeLocale === 'en' ? '/en' : '/'} baslik={homeTitle} description={t.home_subtitle} lang={activeLocale === 'tr' ? 'tr_TR' : 'en_US'}>
       <FlexBox direction='col md:flex-row' justify="between" align="center" className="w-full flex-wrap">
         <FlexBox align="items-start" className="mt-8 md:mt-0 md:p-8 md:w-1/2">
           <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{duration: 0.5, delay: 2.1, type: 'spring'}} className="inline-flex mr-auto space-x-2 bg-gray-600/10 text-gray-800 dark:text-gray-100 dark:bg-white/10 items-center mb-3 text-sm rounded-full pl-2 pr-4 py-0.5 shadow-inner  uppercase tracking-wider font-bold">
