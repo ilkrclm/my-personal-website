@@ -18,6 +18,17 @@ import Icon from '@/components/elements/Icon';
 // install Swiper modules
 SwiperCore.use([Controller, A11y, Navigation, Autoplay]);
 
+export function Count({ theme, count }) {
+  const [mounted, setMounted] = useState(false)
+  useEffect(() => setMounted(true), [])
+
+  if (!mounted) return null
+    return (
+     <span className={`text-3xl md:text-4xl text-transparent bg-clip-text font-bold bg-gradient-to-r ${theme === 'dark' ? "  from-indigo-400 via-purple-500 to-indigo-800" : "from-green-300 via-teal-400 to-blue-400"}`}>{count}</span>
+    );
+  }
+
+
 const PortfolioPage = () => {
 
   const router = useRouter()
@@ -46,14 +57,13 @@ const PortfolioPage = () => {
       <div className="relative flex flex-col md:p-16 w-full h-full min-h-[inherit] overflow-y-clip">
         <h1 className="mt-8 md:mt-0 text-3xl md:text-4xl font-bold uppercase">{t.portfolio_title}</h1>
         <p className="md:text-lg mt-2 max-w-lg font-medium text-gray-700 dark:text-gray-200">{t.portfolio_description}</p> 
-       
         <div className="mt-4 md:mt-8 inline-flex space-x-2 md:space-x-4">
           <div className="rounded-2xl flex flex-col p-3 md:p-4 space-y-1 bg-white/10 dark:bg-gray-900/20 shadow">
-            <span className={`text-3xl md:text-4xl text-transparent bg-clip-text font-bold bg-gradient-to-r ${theme === 'dark' ? "  from-indigo-400 via-purple-500 to-indigo-800" : "from-green-300 via-teal-400 to-blue-400"}`}>10+</span>
+            <Count count="10+" theme={theme} />
             <span className="text-sm md:text-base font-semibold text-gray-700 dark:text-gray-300">{t.portfolio_info1}</span>
           </div>
           <div className="rounded-2xl flex flex-col p-3 md:p-4 space-y-1 bg-white/10 dark:bg-gray-900/20 shadow">
-            <span className={`text-3xl md:text-4xl text-transparent bg-clip-text font-bold bg-gradient-to-r ${theme === 'dark' ? "  from-indigo-400 via-purple-500 to-indigo-800" : "from-green-300 via-teal-400 to-blue-400"}`}>15+</span>
+            <Count count="15+" theme={theme} />
             <span className="text-sm md:text-base font-semibold text-gray-700 dark:text-gray-300">{t.portfolio_info2}</span>
           </div>
         </div>

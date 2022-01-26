@@ -1,7 +1,7 @@
 import withTransition from "@/utils/withTransition"
 import dynamic from 'next/dynamic';
-// const MainLayout = dynamic(() => import('@/components/MainLayout'))
-import MainLayout from '@/components/MainLayout'
+const MainLayout = dynamic(() => import('@/components/MainLayout'))
+// import MainLayout from '@/components/MainLayout'
 const Stack = dynamic(() => import('@/components/ui/Stack'))
 import { useTheme } from "next-themes"
 import Image from 'next/image';
@@ -34,6 +34,17 @@ const list = {
     hidden: { opacity: 0,  },
   }
 
+export function BorderB({ theme }) {
+  const [mounted, setMounted] = useState(false)
+  useEffect(() => setMounted(true), [])
+
+  if (!mounted) return null
+    return (
+     <div className={`absolute bottom-0 inset-x-0 bg-gradient-to-r h-2 w-full ${theme === 'dark' ? "  from-indigo-400 via-purple-500 to-indigo-800" : "from-green-300 via-teal-400 to-blue-400"}`} aria-hidden="true"></div>
+    );
+  }
+  
+
 const AboutPage = () => {
   const router = useRouter()
   const { locales, locale: activeLocale } = router
@@ -59,7 +70,7 @@ const AboutPage = () => {
       <motion.div variants={list} className="flex flex-col md:flex-row md:space-x-16 m-auto pb-8 lg:p-8 w-full ">
 
         <motion.div variants={item} className="relative flex-shrink-0 md:max-w-[280px] overflow-hidden w-full flex flex-wrap md:flex-nowrap md:flex-col md:items-center md:text-center p-3  md:p-5 bg-white/5 dark:bg-gray-900/10 backdrop-blur-md rounded-3xl">
-          <div className={`absolute bottom-0 inset-x-0 bg-gradient-to-r h-2 w-full ${theme === 'dark' ? "  from-indigo-400 via-purple-500 to-indigo-800" : "from-green-300 via-teal-400 to-blue-400"}`} aria-hidden="true"></div>
+          <BorderB theme={theme} />
           <div className="h-32 md:h-52 w-5/12 md:w-full relative flex-shrink-0 rounded-4xl overflow-hidden shadow-md">
             <Image src={`/images/profile.png`} layout="fill" objectFit="cover" objectPosition={`top`} />
           </div>

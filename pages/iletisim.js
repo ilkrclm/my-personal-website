@@ -11,6 +11,17 @@ import axios from 'axios'
 import { ToastContainer, toast } from 'react-toastify'
 import { useEffect, useState } from 'react';
 
+
+export function BorderB({ theme, height="h-1" }) {
+  const [mounted, setMounted] = useState(false)
+  useEffect(() => setMounted(true), [])
+
+  if (!mounted) return null
+    return (
+     <span className={`absolute inset-x-0 bottom-0 ${height} rounded-2xl bg-gradient-to-r ${theme === 'dark' ? "  from-indigo-400 via-purple-500 to-indigo-800" : "from-green-300 via-teal-400 to-blue-400"}`} aria-hidden="true"></span>
+    );
+  }
+
 const ContactPage = () => {
 
   const router = useRouter()
@@ -132,25 +143,25 @@ const ContactPage = () => {
           <h2 className="first-letter:text-xl font-semibold mt-12">{t.contact_subtitle}</h2>
           <div className="flex flex-col space-y-4 mt-4">
             <a href="mailto:hi@ilkercalim.com" className={`overflow-hidden relative rounded-2xl inline-flex mr-auto flex-col p-3 pt-2 md:pt-3 md:p-4 space-y-1 shadow bg-white/10 dark:bg-gray-900/20`}>
-              <span className={`absolute inset-x-0 bottom-0 h-1 rounded-2xl bg-gradient-to-r ${theme === 'dark' ? "  from-indigo-400 via-purple-500 to-indigo-800" : "from-green-300 via-teal-400 to-blue-400"}`}></span>
+              <BorderB theme={theme } />
               <span className={`relative rounded-xl inline-block mr-auto text-gray-700 dark:text-gray-300`}><Icon icon="email" className="h-8 w-8"/></span>
               <span className="relative text-sm md:text-base font-semibold text-gray-700 dark:text-gray-300">hi@ilkercalim.com</span>
             </a>
-            <div href="/" className={`overflow-hidden relative rounded-2xl inline-flex mr-auto flex-col p-3 pt-2 md:pt-3 md:p-4 space-y-1 shadow bg-white/10 dark:bg-gray-900/20`}>
-              <span className={`absolute inset-x-0 bottom-0 h-1 rounded-2xl bg-gradient-to-r ${theme === 'dark' ? "  from-indigo-400 via-purple-500 to-indigo-800" : "from-green-300 via-teal-400 to-blue-400"}`}></span>
+            <div className={`overflow-hidden relative rounded-2xl inline-flex mr-auto flex-col p-3 pt-2 md:pt-3 md:p-4 space-y-1 shadow bg-white/10 dark:bg-gray-900/20`}>
+              <BorderB theme={theme } />
               <span className="relative text-sm md:text-base font-semibold text-gray-700 dark:text-gray-300">{t.contact_follow}</span>
               <div className="flex space-x-4">
-                <a href="" className={`relative rounded-xl inline-block mr-auto text-gray-700 dark:text-gray-300`}><Icon icon="twitter" className="h-8 w-8" /></a>
-                <a href="" className={`relative rounded-xl inline-block mr-auto text-gray-700 dark:text-gray-300`}><Icon icon="instagram" className="h-8 w-8" /></a>
-                <a href="" className={`relative rounded-xl inline-block mr-auto text-gray-700 dark:text-gray-300`}><Icon icon="dribbble" className="h-8 w-8" /></a>
-                <a href="" className={`relative rounded-xl inline-block mr-auto text-gray-700 dark:text-gray-300`}><Icon icon="github" className="h-8 w-8" /></a>
+                <a href="https://www.twitter.com/ilkrclm/" aria-label="Twitter" className={`relative rounded-xl inline-block mr-auto text-gray-700 dark:text-gray-300`}><Icon icon="twitter" className="h-8 w-8" /></a>
+                <a href="https://www.instagram.com/ilkrclm/" aria-label="Instagram" className={`relative rounded-xl inline-block mr-auto text-gray-700 dark:text-gray-300`}><Icon icon="instagram" className="h-8 w-8" /></a>
+                <a href="https://dribbble.com/ilkrclm/" aria-label="Dribbble" className={`relative rounded-xl inline-block mr-auto text-gray-700 dark:text-gray-300`}><Icon icon="dribbble" className="h-8 w-8" /></a>
+                <a href="https://github.com/ilkrclm/" aria-label="Github" className={`relative rounded-xl inline-block mr-auto text-gray-700 dark:text-gray-300`}><Icon icon="github" className="h-8 w-8" /></a>
               </div>
             </div>
             
           </div>
         </div>
         <form onSubmit={handleSubmit(onSubmitForm)} className="mt-8 md:mt-0 relative bg-white/10 dark:bg-gray-900/20 shadow-lg overflow-hidden  rounded-2xl p-4 md:w-1/2">
-          <div className={`absolute bottom-0 inset-x-0 bg-gradient-to-r h-2 w-full ${theme === 'dark' ? "  from-indigo-400 via-purple-500 to-indigo-800" : "from-green-300 via-teal-400 to-blue-400"}`} aria-hidden="true"></div>
+          <BorderB theme={theme} height="h-2" />
           <div className="flex flex-wrap -mx-3 mb-6">
             <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
               <label className="block uppercase tracking-wide text-gray-700 dark:text-gray-300 text-xs font-bold mb-2" htmlFor="ad">
