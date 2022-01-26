@@ -10,6 +10,7 @@ import {useRouter} from 'next/router';
 import tr from "@/locales/tr";
 import en from "@/locales/en";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 const list = {
     visible: {
@@ -40,8 +41,20 @@ const AboutPage = () => {
   const t = activeLocale === 'tr' ? tr : en;
 
   const {theme, setTheme} = useTheme()
+
+   function bgImage() {
+
+    const [mounted, setMounted] = useState(false)
+    useEffect(() => setMounted(true), [])
+
+    if (!mounted) return null
+
+    return theme === 'dark' ? "/images/home-bg-dark.png" : "/images/home-bg.png"
+  
+  }
+
   return (
-    <MainLayout image={theme === 'dark' ? "/images/home-bg-dark.png" : "/images/home-bg.png"} path={activeLocale === 'en' ? '/en/hakkimda' : '/hakkimda'} baslik={t.about_title} description={t.about_description} lang={activeLocale === 'tr' ? 'tr_TR' : 'en_US'}>
+    <MainLayout image={bgImage()} path={activeLocale === 'en' ? '/en/hakkimda' : '/hakkimda'} baslik={t.about_title} description={t.about_description} lang={activeLocale === 'tr' ? 'tr_TR' : 'en_US'}>
       
       <motion.div variants={list} className="flex flex-col md:flex-row md:space-x-16 m-auto pb-8 lg:p-8 w-full ">
 

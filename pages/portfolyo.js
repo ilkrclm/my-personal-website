@@ -9,7 +9,7 @@ import Link from 'next/link';
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Controller, A11y, Navigation, Autoplay} from 'swiper';
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import tr from '@/locales/tr';
 import en from '@/locales/en';
 import { useRouter } from 'next/router';
@@ -30,8 +30,19 @@ const PortfolioPage = () => {
   const [firstSwiper, setFirstSwiper] = useState(null);
   const [secondSwiper, setSecondSwiper] = useState(null);
 
+   function bgImage() {
+
+    const [mounted, setMounted] = useState(false)
+    useEffect(() => setMounted(true), [])
+
+    if (!mounted) return null
+
+    return theme === 'dark' ? "/images/home-bg-dark.png" : "/images/home-bg.png"
+  
+  }
+
   return (
-    <MainLayout image={theme === 'dark' ? "/images/home-bg-dark.png" : "/images/home-bg.png"} path={activeLocale === 'en' ? '/en/portfolyo' : '/portfolyo'} baslik={t.portfolio_title} description={t.portfolio_description} lang={activeLocale === 'tr' ? 'tr_TR' : 'en_US'}>
+    <MainLayout image={bgImage()} path={activeLocale === 'en' ? '/en/portfolyo' : '/portfolyo'} baslik={t.portfolio_title} description={t.portfolio_description} lang={activeLocale === 'tr' ? 'tr_TR' : 'en_US'}>
       <div className="relative flex flex-col md:p-16 w-full h-full min-h-[inherit] overflow-y-clip">
         <h1 className="mt-8 md:mt-0 text-3xl md:text-4xl font-bold uppercase">{t.portfolio_title}</h1>
         <p className="md:text-lg mt-2 max-w-lg font-medium text-gray-700 dark:text-gray-200">{t.portfolio_description}</p> 

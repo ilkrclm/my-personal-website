@@ -9,6 +9,7 @@ import en from '@/locales/en';
 import { useForm  } from 'react-hook-form'
 import axios from 'axios'
 import { ToastContainer, toast } from 'react-toastify'
+import { useEffect, useState } from 'react';
 
 const ContactPage = () => {
 
@@ -111,8 +112,19 @@ const ContactPage = () => {
     }
   }
 
+   function bgImage() {
+
+    const [mounted, setMounted] = useState(false)
+    useEffect(() => setMounted(true), [])
+
+    if (!mounted) return null
+
+    return theme === 'dark' ? "/images/home-bg-dark.png" : "/images/home-bg.png"
+  
+  }
+
   return (
-    <MainLayout image={theme === 'dark' ? "/images/home-bg-dark.png" : "/images/home-bg.png"} path={activeLocale === 'en' ? '/en/iletisim' : '/iletisim'} baslik={t.contact_title} description={t.contact_description} lang={activeLocale === 'tr' ? 'tr_TR' : 'en_US'}>
+    <MainLayout image={bgImage()} path={activeLocale === 'en' ? '/en/iletisim' : '/iletisim'} baslik={t.contact_title} description={t.contact_description} lang={activeLocale === 'tr' ? 'tr_TR' : 'en_US'}>
       <div className="relative flex flex-col md:flex-row md:space-x-12 pb-16 md:p-16 w-full h-full">
         <div className="flex flex-col mt-8 md:mt-0 md:w-1/2">
           <h1 className="text-3xl md:text-4xl font-bold uppercase">{t.contact_title}</h1>
