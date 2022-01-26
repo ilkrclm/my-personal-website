@@ -76,6 +76,9 @@ const Home = () => {
   const dayTime = `${hour}:${minutes}`
   const {theme} = useTheme()
 
+  // busy, available, available soon
+  const availability = 'busy'
+
   let homeTitle = `${t.home_title1.toLowerCase()} ${t.home_title2.toLowerCase()} ${t.home_title3.toLowerCase()}`
   homeTitle = homeTitle.slice(0, 1).toUpperCase() + homeTitle.slice(1)
   return (
@@ -84,10 +87,10 @@ const Home = () => {
         <FlexBox align="items-start" className="mt-8 md:mt-0 md:p-8 md:w-1/2">
           <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{duration: 0.5, delay: 2.1, type: 'spring'}} className="inline-flex mr-auto space-x-2 bg-gray-600/10 text-gray-800 dark:text-gray-100 dark:bg-white/10 items-center mb-3 text-sm rounded-full pl-2 pr-4 py-0.5 shadow-inner  uppercase tracking-wider font-bold">
             <span className="relative inline-flex h-3 w-3" aria-hidden="true">
-              <span className={`animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-50`}></span>
-              <span className={`relative inline-flex rounded-full h-3 w-3 bg-green-500`}></span>
+              <span className={`animate-ping absolute inline-flex h-full w-full rounded-full ${availability === 'busy' ? 'bg-red-400' : availability === 'available' ? 'bg-green-400' : 'bg-orange-400'} opacity-50`}></span>
+              <span className={`relative inline-flex rounded-full h-3 w-3 ${availability === 'busy' ? 'bg-red-500' : availability === 'available' ? 'bg-green-500' : 'bg-orange-500'}`}></span>
             </span>
-            <span>{t.home_available}</span>
+            <span>{availability === 'busy' ? t.home_unavailable : availability === 'available' ? t.home_available : t.home_soon}</span>
           </motion.div>
           <Fade delay={2.2}>
             <H1 className="text-2xl md:text-3xl font-bold tracking-tight leading-9">{t.home_title1} <br />{t.home_title2} <br /> {t.home_title3}</H1>
