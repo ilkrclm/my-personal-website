@@ -57,7 +57,7 @@ const PortfolioPage = () => {
             <span className="text-sm md:text-base font-semibold text-gray-700 dark:text-gray-300">{t.portfolio_info2}</span>
           </div>
         </div>
-         <div className="md:mt-4 flex space-x-4">
+         <div className="md:mt-4 flex space-x-4 xm:mb-80">
           <PopOut delay={2}>
             <ButtonLink href={activeLocale === 'tr' ? '/hakkimda' : '/en/hakkimda'} >
               <Text as="span" text={`${t.portfolio_button1} ➔`} />

@@ -5,6 +5,10 @@ module.exports = {
   content: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   darkMode: 'class', // or 'media' or 'class'
   theme: {
+     screens: {
+      'xm': {'max': '340px'},
+      ...defaultTheme.screens,
+    },
     extend: {
       animation: {
         blur: "blur 0.3s cubic-bezier(0.550, 0.085, 0.680, 0.530) both",

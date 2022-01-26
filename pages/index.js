@@ -118,24 +118,24 @@ const Home = () => {
             <motion.span variants={item} className="px-2">#Next.js</motion.span>
             <motion.span variants={item} className="px-2">#TailwindCss</motion.span>
             <motion.span variants={item} className="px-2">#Strapi</motion.span>
-            <motion.span variants={item} className="px-2">#Graphql</motion.span>
+            <motion.span variants={item} className="px-2 xm:border-none">#Graphql</motion.span>
             {!expanded && (
               <motion.button onClick={() => setExpanded(true)} variants={item} className="ml-2 px-4 font-black rounded-full bg-white/20 border-none shadow-md" aria-label={t.aria_open_list}>...</motion.button>
               )}
             {expanded && (
               <>
-                <motion.span variants={item} className="px-2 border-none lg:border-solid">#Github</motion.span>
+                <motion.span variants={item} className="px-2 border-none xm:border-solid lg:border-solid">#Github</motion.span>
                 <motion.span variants={item} className="px-2 lg:border-none">#Html</motion.span>
                 <motion.span variants={item} className="px-2">#Css</motion.span>
-                <motion.span variants={item} className="px-2">#Javascript</motion.span>
+                <motion.span variants={item} className="px-2 xm:border-none">#Javascript</motion.span>
                 <motion.span variants={item} className="px-2">#Vue.js</motion.span>
-                <motion.span variants={item} className="px-2 border-none lg:border-solid">#Alpine.js</motion.span>
-                <motion.span variants={item} className="px-2">#React.js</motion.span>
+                <motion.span variants={item} className="px-2 border-none xm:border-solid lg:border-solid">#Alpine.js</motion.span>
+                <motion.span variants={item} className="px-2 xm:border-none">#React.js</motion.span>
                 <motion.span variants={item} className="px-2 lg:border-none">#Firebase</motion.span>
                 <motion.span variants={item} className="px-2 ">#Nuxt.js</motion.span>
                 <motion.span variants={item} className="px-2 border-none lg:border-solid">#Node.js</motion.span>
                 <motion.span variants={item} className="px-2">#MongoDB</motion.span>
-                <motion.span variants={item} className="px-2 lg:border-none">#Framer Motion</motion.span>
+                <motion.span variants={item} className="px-2 xm:border-none lg:border-none">#Framer Motion</motion.span>
                 <motion.button onClick={() => setExpanded(false)} variants={item} className="ml-2 px-2 font-black rounded-full bg-white/20 border-none shadow-md" aria-label={t.aria_close_list}>×</motion.button>
               </>
             )}
@@ -153,24 +153,24 @@ const Home = () => {
             </PopOut>
           </FlexBox>
         </FlexBox>
-        <motion.div initial="hidden" animate="visible" variants={slideList} className="ml-auto mt-12 md:mt-0 pb-24 md:pb-0 flex relative w-full md:w-1/2">
+        <motion.div initial="hidden" animate="visible" variants={slideList} className="ml-auto mt-12 md:mt-0 xm:pb-32 pb-24 md:pb-0 flex relative w-full md:w-1/2">
           <Swiper id="projects-slider" modules={[Controller]} controller={{ control: secondSwiper }} onSwiper={setFirstSwiper} effect="fade" slidesPerView={1} spaceBetween={50} loop autoplay={{ delay: 10000 }} className="flex pt-7 md:pt-9 flex-col relative max-w-3xl w-full ml-auto -mr-4 md:-mr-16 shadow-lg overflow-hidden">
             <div className="absolute z-10 overflow-hidden top-0 w-full h-7 md:h-9 rounded-tl-lg bg-gray-100/30 dark:bg-gray-900/30 transition backdrop-blur-md flex overflow-hidden justify-start items-center space-x-1.5 px-2">
                 <span className="relative w-3 h-3 rounded-full bg-red-500"></span>
                 <span className="relative w-3 h-3 rounded-full bg-yellow-400"></span>
                 <span className="relative w-3 h-3 rounded-full bg-lime-500"></span>
             </div>
-              <SwiperSlide className="relative overflow-hidden h-[17.3rem] md:h-96 w-full rounded-b-lg border-t-0">
+              <SwiperSlide className="relative overflow-hidden  xm:h-60 h-[17.3rem] md:h-96 w-full rounded-b-lg border-t-0">
                 <Img src="/images/vahacreative-desktop.png" alt="Vaha Creative Dijital Reklam web sayfasının bilgisayardaki ekran görüntüsü" priority={true} />
               </SwiperSlide>
-              <SwiperSlide className="relative overflow-hidden h-[17.5rem] md:h-96 w-full rounded-b-lg border-t-0">
+              <SwiperSlide className="relative overflow-hidden  xm:h-60 h-[17.3rem] md:h-96 w-full rounded-b-lg border-t-0">
                 <Img src="/images/frekanskurs-desktop.png" alt="Frekans Kurs web sayfasının ekran görüntüsü" />
               </SwiperSlide>
-              <SwiperSlide className="relative overflow-hidden h-[17.5rem] md:h-96 w-full rounded-b-lg border-t-0">
+              <SwiperSlide className="relative overflow-hidden  xm:h-60 h-[17.3rem] md:h-96 w-full rounded-b-lg border-t-0">
                 <Img src="/images/akinciyapi-desktop.png" alt="Akıncı Yapı ve Sineklikleri A.Ş. web sayfasının ekran görüntüsü" />
               </SwiperSlide>
             </Swiper>
-            <div className="absolute top-16 -right-6 z-10">
+            <div className="absolute xm:top-12 top-16 -right-6 z-10">
               <div className="h-5 w-0.5 rounded-l-sm bg-gray-300 dark:bg-gray-700 absolute -left-0.2 top-14"></div>
               <div className="h-6 w-0.5 rounded-l-sm bg-gray-300 dark:bg-gray-700 absolute -left-0.2 top-24"></div>
               <div className="h-6 w-0.5 rounded-l-sm bg-gray-300 dark:bg-gray-700 absolute -left-0.2 top-36"></div>
