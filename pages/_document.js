@@ -29,10 +29,10 @@ class MyDocument extends Document {
               <link rel="icon" type="image/png" sizes="96x96" href="/favicons/favicon-96x96.png" />
               <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
               <link href="/favicons/safari-pinned-tab.png" rel="mask-icon" />
-              <link rel="manifest" href="/favicons/manifest.json" />
-              <meta name="msapplication-TileColor" content="#ffffff" />
+              <link rel="manifest" href="/manifest.json" />
+              <meta name="msapplication-TileColor" content="#3730a3" />
               <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
-              <meta name="theme-color" content="#ffffff"></meta>
+              <meta name="theme-color" content="#3730a3"></meta>
            <script
             async
             src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
