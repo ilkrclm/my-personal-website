@@ -140,7 +140,7 @@ export default function Layout({ children, image="/images/home-bg-dark.png", pat
               {menu && (
                 <motion.aside
                   style={{ originX: 1 }}
-                  className={`bg-gradient-to-br ${theme === 'dark' ? "  from-indigo-500/70 via-purple-700/70 to-indigo-900/70" : "from-green-200/70 via-teal-400/70 to-blue-400/70"} z-10 h-full h-screen overflow-hidden backdrop-filter backdrop-blur-md fixed inset-0`}
+                  className={`bg-gradient-to-br ${theme === 'dark' ? "  from-indigo-500/90 via-purple-700/90 to-indigo-900/90" : "from-green-200/90 via-teal-400/90 to-blue-400/90"} z-10 h-full h-screen overflow-hidden backdrop-filter backdrop-blur-md fixed inset-0`}
                   initial={{ width: 0, x: "-100%" }}
                   animate={{
                     width: "100%", x: "0"
