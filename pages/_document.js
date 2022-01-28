@@ -13,7 +13,6 @@ class MyDocument extends Document {
         <Head>
           <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
               <meta content="IE=edge" httpEquiv="X-UA-Compatible" />
-              <meta content="#ffffff" name="msapplication-TileColor" />
               <meta content="/favicons/browserconfig.xml" name="msapplication-config" />
               <link rel="apple-touch-icon" sizes="57x57" href="/favicons/apple-icon-57x57.png" />
               <link rel="apple-touch-icon" sizes="60x60" href="/favicons/apple-icon-60x60.png" />
