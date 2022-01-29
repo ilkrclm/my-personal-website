@@ -4,7 +4,7 @@ export default {
   portfolio: 'Works',
   contact: 'Contact',
   home_title1: 'A web designer, who', 
-  home_title2: 'Creating digital products', 
+  home_title2: 'Creates digital products', 
   home_title3: 'At user perspective', 
   home_subtitle: 'A project-based web designer. Football and computer enthusiast trying to become his own teacher in web development. Specialized in:', 
   home_available: 'AVAILABLE FOR NEW PROJECTS', 
